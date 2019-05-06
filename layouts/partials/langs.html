@@ -1,0 +1,7 @@
+{{ if .Site.IsMultiLingual }}
+<ul id="language-toggle" class="action-group list-inline">
+  {{ range $translation := .Page.Translations }}
+  <li class="action-group__item-container"><a href="{{ $translation.RelPermalink }}" class="btn action-group__item">{{ if isset .Language.Params "languageicon" }}{{ .Language.Params.languageIcon }} {{ end }}{{ .Language.LanguageName }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}

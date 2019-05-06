@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  {{ .Hugo.Generator }}
+  {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  {{ else }}
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  {{ end }}
+
+  <!-- put css here -->
+</head>
