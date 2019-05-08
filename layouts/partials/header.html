@@ -1,1 +1,21 @@
-{{- partial "langs.html" . -}}
+{{ $featured_image := .Param "hero_image"}}
+<header class="sans-serif">
+  {{ if .IsHome }}
+  <div class="cover bg-left bg-center-l" style="background-image: url('{{ $featured_image }}');">
+    <div class="bg-light pb5 pb6-m pb7-l">
+      {{- partial "nav.html" . -}}
+      <div class="tc-l mt4 mt5-m mt6-l ph3">
+        <h1 class="f2 f-subheadline-l lh-title fw2 mb0 lh-title georgia text-color-main">{{ i18n "letsCelebrate" }}!</h1>
+        <h2 class="fw3 f3 text-color-main mt3 mb4">September 6, 2020 / Becket</h2>
+        <a class="f6 grow-large no-underline br-pill ph3 pv2 mb2 dib text-color-main bg-accent uppercase" href="#">{{ i18n "rsvp" }}</a>
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="cover bg-left bg-center-l">
+    <div class="bg-light pb3-l">
+      {{- partial "nav.html" . -}}
+    </div>
+  </div>
+  {{ end }}
+</header>

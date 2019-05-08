@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
     {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
+    <body class="ma0 bg-accent {{ $.Param "body_classes" | default "helvetica"}}">
+        {{- partial "header" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}
         </div>

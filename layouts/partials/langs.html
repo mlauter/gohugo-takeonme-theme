@@ -1,7 +1,23 @@
 {{ if .Site.IsMultiLingual }}
-<ul id="language-toggle" class="action-group list-inline">
-  {{ range $translation := .Page.Translations }}
-  <li class="action-group__item-container"><a href="{{ $translation.RelPermalink }}" class="btn action-group__item">{{ if isset .Language.Params "languageicon" }}{{ .Language.Params.languageIcon }} {{ end }}{{ .Language.LanguageName }}</a></li>
+{{ $isNotFoundPage := (eq (len (findRE ".*/404\\.html" .RelPermalink 1)) 1)}}
+{{ $scratch := newScratch }}
+{{ if $isNotFoundPage }}
+  {{ $scratch.Set "translations" .Site.Home.Translations }}
+{{ else }}
+  {{ $scratch.Set "translations" .Page.Translations }}
+{{ end }}
+{{ $translations := $scratch.Get "translations" }}
+{{ $pageRel := .RelPermalink }}
+<div id="language-toggle" class="dtc v-mid w-10">
+  {{ range $translation := $translations }}
+  {{ if $isNotFoundPage }}
+    {{ (cond (ne .Page.Lang "en") (printf "%s/%s" .Language.Lang "404.html") "/404.html") | $scratch.Set "link" }}
+  {{ else }}
+    {{ $scratch.Set "link" .RelPermalink }}
   {{ end }}
-</ul>
+  <a class="fw6 link underline-hover text-color-main inline-flex items-center tc br1 pl2 pr2 pt1 pb1 fr" href="{{ $scratch.Get "link" }}" title="{{ .Language.LanguageName }}">
+    <span class="ml2">{{ .Language.LanguageName }}</span>
+  </a>
+  {{ end }}
+</div>
 {{ end }}

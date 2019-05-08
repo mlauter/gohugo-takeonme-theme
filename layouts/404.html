@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="center cf pv5 measure-wide-l">
+  <div class="tc-ns">
+    <h1 class="f-subheadline lh-title fw4 mb0 mt0 lh-title text-color-main">404</h1>
+    <h2 class="fw3 f3 text-color-main mt3 mb4 ">{{ i18n "notfound" }}.</h2>
+  </div>
+  {{ with .Site.Params.notfound_image }}<div><img src="{{ . }}" width="100%" height="100%"></img></div>{{ end }}
+</article>
+{{ end }}

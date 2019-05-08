@@ -1,2 +1,8 @@
-[hello]
-other = "Bonjour"
+[rsvp]
+other = "rsvp"
+
+[letsCelebrate]
+other = "Célébrons"
+
+[notfound]
+other = "Ceci n'est pas la page que vous cherchez"

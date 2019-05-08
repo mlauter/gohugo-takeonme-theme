@@ -1,3 +1,6 @@
 {{define "main"}}
-<h2>{{i18n "hello"}}</h2>
+<div class="">
+<iframe width="600" height="450" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJA7aFzBZH54kRC79pMIdqYh4&key={{ (getenv "HUGO_GMAPS_API_KEY") }}" allowfullscreen></iframe>
+</div>
 {{end}}

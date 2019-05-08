@@ -1,2 +1,8 @@
-[hello]
-other = "Hello"
+[rsvp]
+other = "rsvp"
+
+[letsCelebrate]
+other = "Let's celebrate"
+
+[notfound]
+other = "This isn't the page you're looking for"
