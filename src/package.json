@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A theme for hugo sites",
   "main": "index.js",
-  "repository": "",
+  "repository": "https://github.com/mlauter/gohugo-theme-takeonme",
   "author": "mlauter",
   "license": "MIT",
   "scripts": {
