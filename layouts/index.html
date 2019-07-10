@@ -1,6 +1,17 @@
 {{define "main"}}
-<div class="">
-<iframe width="600" height="450" frameborder="0" style="border:0"
+<div class="dt mw6 center pt0 pb5 pv5-m pv6-ns">
+  <div class="db dtc-ns v-mid-ns">
+    <iframe width="600" height="450" frameborder="0" style="border:0" class="w-100 mw7 w5-ns"
         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJA7aFzBZH54kRC79pMIdqYh4&key={{ (getenv "HUGO_GMAPS_API_KEY") }}" allowfullscreen></iframe>
+  </div>
+  <div class="db dtc-ns v-mid ph2 pr0-ns pl3-ns">
+    <p class="lh-copy">
+      For desktop, this text is vertically aligned middle, no matter what the height of the image is.
+      On mobile, this is a paragraph below an image.
+    </p>
+  </div>
+</div>
+
+<div class="">
 </div>
 {{end}}
