@@ -28,7 +28,7 @@
     "postcss-preset-env": "6.6.0",
     "style-loader": "^0.16.1",
     "tachyons": "^4.9.1",
-    "webpack": "^2.3.3"
+    "webpack": "^5.75.0"
   },
   "dependencies": {}
 }
